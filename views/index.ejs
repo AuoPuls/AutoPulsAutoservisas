@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoPuls Autoservisas</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoPuls Autoservisas</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>AutoPuls Autoservisas</h1>
-        <p>Jūsų patikimas partneris automobilių priežiūrai</p>
-    </header>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>AutoPuls Autoservisas</h1>
+      <p>Patikima automobilių priežiūra Klaipėdoje</p>
+    </div>
+  </header>
 
-    <main>
-        <h2>Sveiki atvykę!</h2>
-        <p>Pasirinkite kur norite eiti:</p>
-        <div class="buttons">
-            <a href="/login">Prisijungimas</a>
-            <a href="/admin">Administracija</a>
-        </div>
+  <section class="form-section">
+    <h2>Užsakykite vizitą</h2>
+    <form action="/sekme" method="POST">
+      <label for="paslauga">Pasirinkite paslaugą:</label>
+      <select name="paslauga" id="paslauga" required>
+        <option value="">-- Pasirinkite --</option>
+        <option value="Padangų montavimas">Padangų montavimas</option>
+        <option value="Diagnostika">Diagnostika</option>
+        <option value="Automobilio remontas">Automobilio remontas</option>
+      </select>
 
-        <img src="/img/car.jpg" alt="Automobilis" class="hero-img">
+      <label for="data">Pageidaujama data:</label>
+      <input type="date" id="data" name="data" required>
 
-        <section class="kontaktai">
-            <h2>Kontaktai</h2>
-            <p>📍 Liepų gatvė 87F, Klaipėda</p>
-            <p>📞 +37067296289</p>
-            <p>📧 autoservisas@example.com</p>
-        </section>
-    </main>
+      <label for="laikas">Pageidaujamas laikas:</label>
+      <input type="time" id="laikas" name="laikas" required>
 
-    <footer>
-        <p>&copy; 2025 AutoPuls. Visos teisės saugomos.</p>
-    </footer>
+      <label for="komentaras">Papildoma informacija:</label>
+      <textarea id="komentaras" name="komentaras" rows="4" placeholder="Pvz. automobilio modelis, specifiniai poreikiai..."></textarea>
+
+      <button type="submit">Užsakyti vizitą</button>
+    </form>
+
+    <div class="darbo-laikas" id="darboLaikas"></div>
+  </section>
+
+  <footer>
+    <div class="kontaktai">
+      <h3>Kontaktai</h3>
+      <p><strong>Adresas:</strong> Liepų gatvė 87F, Klaipėda</p>
+      <p><strong>Telefonas:</strong> +37067296289</p>
+      <p><strong>El. paštas:</strong> info@autopuls.lt</p>
+    </div>
+    <p>&copy; <%= new Date().getFullYear() %> AutoPuls. Visos teisės saugomos.</p>
+  </footer>
+
+  <script>
+    // Darbo laiko indikatorius
+    const darboLaikas = document.getElementById('darboLaikas');
+    const dabar = new Date();
+    const valanda = dabar.getHours();
+    const diena = dabar.getDay();
+    if (diena >= 1 && diena <= 5 && valanda >= 8 && valanda < 17) {
+      darboLaikas.innerText = '✔️ Šiuo metu dirbame';
+      darboLaikas.classList.add('online');
+    } else {
+      darboLaikas.innerText = '❌ Šiuo metu nedirbame (darbo laikas: I–V 8:00–17:00)';
+      darboLaikas.classList.add('offline');
+    }
+  </script>
 </body>
 </html>
