@@ -1,47 +1,106 @@
+/* Reset & baziniai nustatymai */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 0;
+.hero {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-main {
-    padding: 2rem;
-    text-align: center;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 }
 
-.buttons a {
-    margin: 0 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+.hero p {
+  font-size: 1.2rem;
 }
 
-.hero-img {
-    width: 80%;
-    max-width: 600px;
-    margin-top: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.form-section {
+  background-color: white;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
 
-.kontaktai {
-    margin-top: 3rem;
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2a5298;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #2a5298;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e3c72;
+}
+
+.darbo-laikas {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.online {
+  color: green;
+}
+
+.offline {
+  color: red;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #222;
-    color: white;
+  background-color: #2a2a2a;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.kontaktai h3 {
+  margin-bottom: 1rem;
+}
+
+.kontaktai p {
+  margin: 0.3rem 0;
 }
