@@ -1,15 +1,41 @@
-<!DOCTYPE html>
-<html lang="lt">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoPuls Autoservisas</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-  <!-- KODAS TRUMPINAMAS dėl vietos -->
-  <footer>
-    <p>&copy; 2025 AutoPuls. Visos teisės saugomos.</p>
-  </footer>
-</body>
-</html>
+<%- include('partials/header') %>
+
+<main class="container">
+  <section class="hero">
+    <h1>AutoPuls</h1>
+    <p class="subtitle">Automobilių priežiūra Klaipėdoje</p>
+    <p class="description">
+      Teikiame profesionalias automobilio priežiūros paslaugas: diagnostiką su AUTEL sistema,
+      padangų montavimą, važiuoklės remontą, smulkius variklio darbus ir dar daugiau.
+    </p>
+    <button id="openPopup" class="btn-primary">Užsakyti vizitą</button>
+  </section>
+
+  <section class="services">
+    <h2>Mūsų paslaugos</h2>
+    <ul class="service-list">
+      <li>🔧 Automobilio diagnostika (AUTEL sistema)</li>
+      <li>🚗 Padangų montavimas ir balansavimas</li>
+      <li>🔩 Važiuoklės ir pakabos remontas</li>
+      <li>🛠️ Smulkūs variklio darbai</li>
+      <li>🧼 Periodinė techninė priežiūra</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Kontaktai</h2>
+    <p><strong>📍 Adresas:</strong> Liepų g. 87F, Klaipėda</p>
+    <p><strong>📞 Tel.:</strong> +370 672 96289</p>
+    <p><strong>🕒 Darbo laikas:</strong><br>
+      I–V: 8:00 – 19:00<br>
+      VI: 10:00 – 15:00
+    </p>
+
+    <a href="https://maps.google.com/?q=Liepų+g.+87F,+Klaipėda" target="_blank">
+      <img src="https://maps.googleapis.com/maps/api/staticmap?center=Liepų+g.+87F,+Klaipėda&zoom=15&size=600x300&markers=color:red|Liepų+g.+87F,+Klaipėda&key=YOUR_API_KEY" alt="AutoPuls lokacija" style="width: 100%; max-width: 600px; margin-top: 10px;">
+    </a>
+  </section>
+</main>
+
+<%- include('popup') %>
+<%- include('partials/footer') %>
