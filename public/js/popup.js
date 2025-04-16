@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const o=document.getElementById('popup'),e=document.getElementById('openPopup'),t=document.getElementById('closePopup');e.addEventListener('click',()=>{o.style.display='flex'}),t.addEventListener('click',()=>{o.style.display='none'}),window.addEventListener('click',e=>{e.target===o&&(o.style.display='none')})});
